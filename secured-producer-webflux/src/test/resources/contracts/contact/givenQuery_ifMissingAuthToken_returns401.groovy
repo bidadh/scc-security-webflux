@@ -12,11 +12,10 @@ Contract.make {
 
     request {
         method(GET())
-        urlPath('/contact/search') {
-            queryParameters {
-                parameter 'query': equalTo('hel')
-            }
+        headers {
+            header(accept(), applicationJson())
         }
+        url('/contact/search')
     }
     response {
         status(UNAUTHORIZED())

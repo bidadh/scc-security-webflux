@@ -14,6 +14,7 @@ Contract.make {
     method(GET())
     headers {
       header(authorization(), $(c(anyNonBlankString())))
+      header(accept(), applicationJson())
     }
     urlPath('/contact/search') {
       queryParameters {
@@ -23,6 +24,9 @@ Contract.make {
   }
   response {
     status(OK())
+    headers {
+      header(contentType(), applicationJson())
+    }
     body([
         [
             id     : "1",
