@@ -13,7 +13,7 @@ Contract.make {
   request {
     method(GET())
     headers {
-      header(authorization(), $(c(anyNonBlankString())))
+      header(authorization(), $(c('FAKE_AUTH')))
       header(accept(), applicationJson())
     }
     urlPath('/contact/search') {
